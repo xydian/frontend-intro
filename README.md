@@ -4,9 +4,9 @@
 
 cd into folder `react`
 
-execute `yarn install` to install all required dependencies
+execute `npm install` to install all required dependencies
 
-run `yarn dev` to start the dev server
+run `npm run dev` to start the dev server
 
 access the frontend on `http://localhost:5173/`
 
