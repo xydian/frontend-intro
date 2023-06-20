@@ -1,5 +1,6 @@
-import { Box, Drawer, List, ListItem, ListItemText } from '@mui/material'
+import { Drawer, List, ListItem, ListItemText } from '@mui/material'
 import { Outlet } from 'react-router-dom'
+import { Box } from './components'
 
 function App() {
   const drawerWidth = 240
