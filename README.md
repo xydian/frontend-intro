@@ -20,7 +20,7 @@ Start the application and go to `Scene with orthographic camera` . This renders 
 
 ![Scene with orthographic camera](assets/screenshot_1.png)
 
-For starters draw a line from -3/0/0 to -3/5/0 on the grid with a thickness of 4 and a color of your choice. Use the [Line component](https://github.com/pmndrs/drei#line) of @react-three/drei.
+For starters draw a line from -3/0/0 to -3/5/0 on the grid with a thickness of 4 and a color of your choice. Use the [Line component](https://github.com/pmndrs/drei#line) of @react-three/drei. You need to modify `src/pages/page2.tsx` for the changes to appear on the Scene with orthographic camera
 
 ### Task 2
 
