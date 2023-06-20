@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { Box, OrbitControls } from '@react-three/drei'
 import { Euler } from 'three'
 
