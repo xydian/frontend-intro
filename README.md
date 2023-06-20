@@ -8,13 +8,17 @@ execute `npm install` to install all required dependencies
 
 run `npm run dev` to start the dev server
 
-access the frontend on `http://localhost:5173/`
+access the frontend on `http://localhost:5173/`. It should look like the following. You can use the buttons on the left to switch between the two scenes (orthographic/perspective)
+
+![Scene with boxes](assets/screenshot_2.png)
 
 ## Tasks
 
 ### Task 1
 
 Start the application and go to `Scene with orthographic camera` . This renders a scene with a helper grid and an orthographic camera that looks from top on the displayed grid.
+
+![Scene with orthographic camera](assets/screenshot_1.png)
 
 For starters draw a line from -3/0/0 to -3/5/0 on the grid with a thickness of 4 and a color of your choice. Use the [Line component](https://github.com/pmndrs/drei#line) of @react-three/drei.
 
