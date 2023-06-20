@@ -1,4 +1,4 @@
-import { Box, MapControls, OrthographicCamera } from '@react-three/drei'
+import { Box, Line, MapControls, OrthographicCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { ReactElement } from 'react'
 import { Euler } from 'three'
@@ -6,10 +6,7 @@ import { Euler } from 'three'
 const Page2 = (): ReactElement => {
   return (
     <>
-      <Canvas
-        style={{ height: '100vH' }}
-        // camera={{ position: [-2, -3, 3], up: [0, 0, 1] }}
-      >
+      <Canvas style={{ height: '100vH' }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <Box position={[-1.2, 0, 0]} />
@@ -41,6 +38,15 @@ const Page2 = (): ReactElement => {
           // position and target)
           // test
           screenSpacePanning={true}
+        />
+
+        <Line
+          points={[
+            [0, 0, 0],
+            [2, 0, 0],
+          ]} // Array of points, Array<Vector3 | Vector2 | [number, number, number] | [number, number] | number>
+          color="black" // Default
+          lineWidth={4} // In pixels (default)
         />
       </Canvas>
     </>
