@@ -1,7 +1,9 @@
 import { MapControls, OrthographicCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import { Line } from '@react-three/drei'
 import { ReactElement } from 'react'
 import { Euler } from 'three'
+import { walls_floorplan } from '../../data/task2'
 
 const Page2 = (): ReactElement => {
   return (
@@ -37,6 +39,15 @@ const Page2 = (): ReactElement => {
           // test
           screenSpacePanning={true}
         />
+        {walls_floorplan.map((wall, index) => (
+          <Line
+            points={[wall.start, wall.end]}       // Array of points, Array<Vector3 | Vector2 | [number, number, number] | [number, number] | number>
+            color="black"                   // Default
+            lineWidth={4}                   // In pixels (default)
+            segments                        // If true, renders a THREE.LineSegments2. Otherwise, renders a THREE.Line2
+            dashed={false}                  // Default
+          />
+        ))}
       </Canvas>
     </>
   )
