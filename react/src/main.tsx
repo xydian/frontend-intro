@@ -4,6 +4,7 @@ import App from './App.tsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Page1 from './pages/page1.tsx'
 import Page2 from './pages/page2.tsx'
+import Page3 from './pages/page3.tsx'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: '/page2',
         element: <Page2 />,
+      },
+      {
+        path: '/page3',
+        element: <Page3 />,
       },
     ],
   },

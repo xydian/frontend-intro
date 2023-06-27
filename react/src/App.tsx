@@ -46,6 +46,14 @@ function App() {
               <ListItemText>Scene with orthographic camera</ListItemText>
             </ListItemButton>
           </ListItem>
+
+          <ListItem>
+            <ListItemButton href="/page3">
+              <ListItemText>
+                Scene with orthographic camera and Form
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
 
