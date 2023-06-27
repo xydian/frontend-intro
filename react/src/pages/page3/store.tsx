@@ -4,6 +4,9 @@ import { reject } from 'lodash-es'
 
 interface State {
   walls: Wall[]
+
+  addWall: (wall: Wall) => void
+  removeWall: (index: number) => void
 }
 
 const usePage3Store = create<State>((set) => ({

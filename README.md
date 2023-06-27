@@ -51,3 +51,15 @@ const AnyReactComponent = () => {
   
   Not yet available
 </details>
+
+### Task 3
+
+Take a look at page3 in `src/pages/page3.tsx`. You should add a feature to delete any existing walls. Allow the user to select any wall (use `onClick` property on the Line component). The selected wall index should be stored in a `useState` first. The selected wall should be colore red. If this is working, you should try to store the selected wall index in the zustand store in `src/pages/page3/store.tsx`. You need to add a new property `selectedWall` and a method `setSelectedWall` to the zustand store.
+
+If selecting any wall is working, you should use the `removeWall` method of the zustand store to allow the user to remove any existing wall by pressing the button `Ausgewählte Wand löschen`.
+
+### Task 4
+
+The user should now be able to remove any exsisting walls from the model. Now you should allow him/her to add new walls to the model based on an start and end coordinate (x/y -> z should be 0). Please add two textfields to the existing text fields in page 3 (X End and Y End). Change the onSubmit method of the form in `src/pages/page3.tsx` to add a new wall to the store using the `addWall` method provided by the `usePage3Store` store.
+
+Bonus task: Add a validation that no walls are intersecting. You need to modify the test `isIntersecting` of the validation schema provided to the form in order for this to work. Use [turfjs](https://turfjs.org/) to find intersections of lines.
