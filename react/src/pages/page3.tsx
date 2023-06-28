@@ -1,5 +1,5 @@
 import { Line, MapControls, OrthographicCamera } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useStore } from '@react-three/fiber'
 import { ReactElement } from 'react'
 import { Euler } from 'three'
 import { Form, TextField } from '../components'
@@ -7,9 +7,17 @@ import { boolean, number, object } from 'yup'
 import { Button, Divider, Stack } from '@mui/material'
 import usePage3Store from './page3/store'
 import ErrorField from '../components/ErrorField'
+import React, { useState } from 'react'
+
+
+const NO_WALL_SELECTED = null
+
 
 const Page3 = (): ReactElement => {
   const walls_floorplan = usePage3Store((state) => state.walls)
+  const removeWall = usePage3Store((state) => state.removeWall)
+  const [selectedWall, setSelectedWall] = useState(NO_WALL_SELECTED); // default state is empty
+  
 
   const schema = object({
     x_start: number().required().min(0).max(10).default(0),
@@ -37,9 +45,12 @@ const Page3 = (): ReactElement => {
   })
 
   const onClickDeleteWall = () => {
-    alert('TODO: delete')
+    // remove selected wall if there is any
+    if (selectedWall !== NO_WALL_SELECTED) {
+      removeWall(selectedWall)
+      setSelectedWall(NO_WALL_SELECTED) // todo maybe there is a better way to do this than to use null
+    }
   }
-
   return (
     <>
       <Form
@@ -105,7 +116,7 @@ const Page3 = (): ReactElement => {
         {walls_floorplan.map((wall, index) => (
           <Line
             points={[wall.start, wall.end]} // Array of points, Array<Vector3 | Vector2 | [number, number, number] | [number, number] | number>
-            color="black" // Default
+            color={index == selectedWall ? "red" : "black"}// Default
             lineWidth={4} // In pixels (default)
             segments // If true, renders a THREE.LineSegments2. Otherwise, renders a THREE.Line2
             dashed={false} // Default
@@ -115,6 +126,12 @@ const Page3 = (): ReactElement => {
             onPointerLeave={() => {
               document.body.style.cursor = 'auto'
             }}
+            onClick={
+              () => {
+                setSelectedWall(index)
+              }
+              // TODO: change color of line to red
+            }
           />
         ))}
       </Canvas>
